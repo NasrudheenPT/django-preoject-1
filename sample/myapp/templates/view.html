@@ -1,0 +1,38 @@
+{% extends 'main.html' %}
+{% block content %}
+
+<body>
+  
+    
+<h1>view</h1>
+<div class="view">
+    <div class="container">
+
+
+    <table class="table table-primary" style="background-color:#b8daff;">
+        <tr>
+            <th> NAME</th>
+            <th>ROLL NO</th>
+            <!-- <th>DEPARTMENT</th> -->
+            <th>EMAIL</th>
+            <th></th>
+            <th></th>
+            </tr>
+            {% for d in stu %}
+            <tr>
+                <td>{{ d.name }}</td>
+                <td>{{ d.age }}</td>
+                <!-- <td>{{ d.dpt }}</td> -->
+                <td>{{ d.email }}</td>
+                
+                <td><a href="{% url 'updatepage' d.id %}" class="btn btn-info">Update</a></td>
+                <td><a href="{% url 'deletepage' d.id %}" class="btn btn-danger">Delete</a></td>
+
+            </tr>
+            {% endfor %}
+            </table>
+    </div></div></div>
+    </body>
+
+
+{% endblock content %}

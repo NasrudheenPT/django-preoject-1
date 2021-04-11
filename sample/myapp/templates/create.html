@@ -1,0 +1,25 @@
+{% extends 'main.html' %}
+{% block content %}
+
+<html>
+<body>
+    
+    <h1>insert</h1>
+    <div class="container">
+<form action="" method="POST" style="background-color:#b8daff;">
+    
+    {% csrf_token %}
+    
+        <table class="table table-primary">
+            {{myform.as_table}}
+           
+        </table>
+    <div class="text-center">
+        <input type="submit" class="btn btn-primary " name="sub"  value="register">
+        .</form>
+    </form>
+</div></div>
+    </body>
+    </html>
+
+{% endblock content %}

@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <style>
+    .page-holder {
+      min-height: 100vh;
+    }
+  </style>
+
+
+
+</head>
+
+
+<body background="{% static 'images/new.jpg' %}">
+
+
+  <div class="container ">
+    <header class="text-center text-white py-1">
+      <h1 class="display-4 font-weight-bold mb-1">Students Data</h1>
+      <p class="lead mb-0">....Fill the students form ....</p>
+    </header>
+
+    <div class="text-white">
+      <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+        <ul class="nav navbar-nav">
+          <li><a class="navbar-brand " href="{% url 'mainpage' %}">main </a></li>
+          <li><a class="navbar-brand" href="{% url 'insertpage' %}">insert students </a></li>
+          <li><a class="navbar-brand" href="{% url 'viewpage' %}">view students</a></li>
+          <li><a class="navbar-brand" href="{% url 'createpage' %}">create</a></li>
+          <li><a class="navbar-brand" href="{% url 'loginpage' %}">Login</a></li>
+
+          <li><a class="navbar-brand" href="{% url 'fileuploadpage' %}">File Upload</a></li>
+          <li><a class="navbar-brand" href="{% url 'viewfilepage' %}">view file upload </a></li>
+          <li><a class="navbar-brand" href="{% url 'logoutpage' %}">Logout </a></li>
+          <li><a class="navbar-brand" href="{% url 'emailpage' %}">Email </a></li>
+
+
+          {% if request.user.is_authenticated %}
+          <h4>loged as {{request.user}} </h4>
+          {% endif %}
+        </ul>
+    </div>
+    </nav>
+    {% block content %}
+    <img src="{% static 'images/IMG_7057.jpg' %}" height="300" width="300">
+
+
+  </div>
+  </div>
+
+
+
+  {% endblock content %}
+
+
+
+
+</body>
+
+</html>

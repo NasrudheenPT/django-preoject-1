@@ -1,0 +1,28 @@
+{% extends 'main.html' %}
+{% block content %}
+
+
+<br>
+<div class="row">
+  {% for i in data %}
+  <div class="w3-container col-md-4 container">
+      <h2>{{i.Student.name}}</h2>
+      <div class="w3-card-6 " style="width:72%;">
+        <div class="card text-white bg-dark container">
+        <img class="card-img-top " src="holder.js/100px180/" alt="">
+        <div class="card-body">
+          <h4 class="card-title">Gallery</h4>
+          <p class="card-text">PHOTOS</p>
+        </div>
+      </div>
+          <img src="{{i.image.url}}" alt="" height="250" width="250">
+        <div class="w3-container w3-center">
+          <a href="#" class="btn btn-warning stretched-link">See Profile</a>
+        </div>
+      </div>
+  </div>
+  {% endfor %}
+</div>
+
+
+{% endblock content %}
